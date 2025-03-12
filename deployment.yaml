@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tg-meat-test3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tg-meat-test3
+  template:
+    metadata:
+      labels:
+        app: tg-meat-test3
+    spec:
+      containers:
+      - name: tg-meat-test3
+        image: radiumr30/tg_meat_test3:latest
+        ports:
+        - containerPort: 80
